@@ -133,7 +133,7 @@ char send_ascii(char c) {
 
 void serial_transmit() {
     VIDEO_RDA_HI;
-    _delay_us(5);
+    _delay_us(150);
   if (GET_VIDEO_DA != 0) {
     VIDEO_RDA_LO;
     char c = iox_read(0, VIDEO_GPIO) & 127;
