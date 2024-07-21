@@ -1,6 +1,6 @@
 # Further improved PIA Communicator for the RC6502
 
-This version have a few minor changes from JBLANG's version, mainly 2 changes in the pia.c file, moved the VIDEO_RDA_LO manipulation be before the serial_send and increased the _delay(1) to _delay(5). Both are done to improve the timing on the "video output emulation" from the SBC to Arduino.
+This version have a few minor changes from JBLANG's version, mainly 2 changes in the pia.c file, moved the VIDEO_RDA_LO manipulation be before the serial_send and increased the _delay(1) to _delay(150). Both are done to improve the timing on the "video output emulation" from the SBC to Arduino.
 
 Also re-instated the uart_puts function from the tebl version and replaced the "!" prompt with a copy of the original message "RC6502 Apple 1 Replica" added V2 to distinguish it from the original.
 
