@@ -87,6 +87,12 @@ void uart_putc (uint8_t d)
 	TxFifo.wi = (i + 1) % sizeof TxFifo.buff;
 }
 
+/* Put a string to transmit */
+void uart_puts(char *str) {
+        while (*str) uart_putc(*str++);
+        uart_putc('\r');
+        uart_putc('\n');
+}
 
 /* UART RXC interrupt */
 
