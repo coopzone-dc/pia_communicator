@@ -52,9 +52,8 @@
 #define KBD_SEND_TIMEOUT 23
 
 void pia_init(void)
-{
     uart_init(BAUD);
-    uart_putc('!');
+    uart_puts("RC6502 Apple 1 Replica V2");
     iox_init();
 
     HANDSHAKE_DDR |= (1 << KBD_STROBE) | (1 << VIDEO_RDA);
@@ -134,11 +133,11 @@ char send_ascii(char c) {
 
 void serial_transmit() {
     VIDEO_RDA_HI;
-    _delay_us(1);
+    _delay_us(5);
   if (GET_VIDEO_DA != 0) {
-    char c = iox_read(0, VIDEO_GPIO) & 127;
     VIDEO_RDA_LO;
-
+    char c = iox_read(0, VIDEO_GPIO) & 127;
+      
     send_ascii(c);
   }
 }
