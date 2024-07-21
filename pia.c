@@ -51,7 +51,7 @@
 #define KBD_INTERRUPT_ENABLE 1
 #define KBD_SEND_TIMEOUT 23
 
-void pia_init(void)
+void pia_init(void) {
     uart_init(BAUD);
     uart_puts("RC6502 Apple 1 Replica V2");
     iox_init();
