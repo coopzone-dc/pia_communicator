@@ -1,3 +1,11 @@
+# Further improved PIA Communicator for the RC6502
+
+This version have a few minor changes from JBLANG's version, mainly 2 changes in the pia.c file, moved the VIDEO_RDA_LO manipulation be before the serial_send and increased the _delay(1) to _delay(5). Both are done to improve the timing on the "video output emulation" from the SBC to Arduino.
+
+Also re-instated the uart_puts function from the tebl version and replaced the "!" prompt with a copy of the original message "RC6502 Apple 1 Replica" added V2 to distinguish it from the original.
+
+Everything else is the same.....
+
 # Improved PIA Communicator for RC6502
 
 This is an improved version of the [RC6502](https://github.com/tebl/RC6502-Apple-1-Replica) PIA communicator firmware for an Arduino Nano. It is based on the original [Arduino Sketch](https://github.com/tebl/RC6502-Apple-1-Replica/blob/master/RC6502%20Serial%20IO/pia_communicator/pia_communicator.ino) provided with the RC6502. I have replaced the Arduino serial library with buffered interrupt-based serial communications routines and removed all the unnecessary communication delays.  
